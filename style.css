@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+:root {
+    --cor1: #16161d;
+    --cor2: #1f1f2b;
+    --cor3: #24242f;
+
+    --texto-primario: #f2f2f2;
+    --texto-secundario: #9a9aa5;
+
+    --cor-receita: #4ade80;
+    --cor-gasto: #f87171;
+    --cor-destaque: #6366f1;
+
+    --borda-cor: #2e2e3a;
+    --radius: 12px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor1);
+    color: var(--texto-primario);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    margin: auto;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--texto-primario);
+    padding: 15px 0 2px 0;
+}
+
+header p {
+    color: var(--texto-secundario);
+}
+
+#resumo {
+    display: flex;
+    gap: 15px;
+    margin: 20px 15px;
+}
+
+.card {
+    flex: 1;
+    background-color: var(--cor2);
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1rem;
+    color: var(--texto-secundario);
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.card > span {
+    display: block;
+}
+
+.card > span:first-of-type {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.card > span:nth-of-type(2) {
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+    margin-bottom: 4px;
+}
+
+.card > span:nth-of-type(3) {
+    font-size: 0.75rem;
+    color: var(--texto-secundario);
+}
+
+.variacao-positiva {
+    color: var(--cor-receita);
+}
+
+.variacao-negativa {
+    color: var(--cor-gasto);
+}
+
+#cardReceita > span:first-of-type {
+    color: var(--cor-receita);
+}
+
+#cardGasto > span:first-of-type {
+    color: var(--cor-gasto);
+}
+
+#cardSaldo {
+    border: 2px solid var(--cor-destaque);
+    transform: scale(1.03);
+}
+
+form {
+    margin: 20px 15px;
+    background-color: var(--cor2);
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+form fieldset {
+    border: none;
+    margin-bottom: 12px;
+}
+
+form fieldset:first-of-type {
+    display: flex;
+    gap: 10px;
+}
+
+form fieldset:first-of-type input, form fieldset:first-of-type select {
+    width: auto;
+}
+
+#ivalor {
+    flex: 0.6;
+}
+
+#itipo {
+    flex: none;
+    width: 110px;
+}
+
+#idescricao {
+    flex: 1.5;
+}
+
+form input, form select {
+    background-color: var(--cor3);
+    color: var(--texto-primario);
+    border: 1px solid var(--borda-cor);
+    border-radius: var(--radius);
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+form input:focus, form select:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#categorias input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#categorias label {
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    background-color: var(--cor3);
+    border: 1px solid var(--borda-cor);
+    color: var(--texto-secundario);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+#categorias input[type="radio"]:checked + label {
+    background-color: var(--cor-destaque);
+    border-color: var(--cor-destaque);
+    color: var(--texto-primario);
+}
+
+#categorias label:hover {
+    border-color: var(--cor-destaque);
+}
+
+button {
+    background-color: gold;
+    border: none;
+    border-radius: var(--radius);
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: filter 0.15s ease;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+#listT, #graphic {
+    margin: 20px 15px;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--cor2);
+    padding: 16px;
+    margin-top: 30px;
+}
+
+footer p {
+    color: var(--texto-primario);
+    margin-bottom: 6px;
+}
+
+footer a {
+    color: var(--texto-secundario);
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.15s ease;
+}
+
+footer a:hover {
+    color: var(--cor-destaque);
+}
