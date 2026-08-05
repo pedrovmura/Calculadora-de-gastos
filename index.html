@@ -42,11 +42,19 @@
             </select>
             <input type="text" id="idescricao" placeholder="Descrição">
         </fieldset>
-        <fieldset id="categorias">
-            <input type="radio" name="categoria" id="isal" value="salario" required> <label for="isal">Salário</label>
-            <input type="radio" name="categoria" id="ibet" value="apostas"> <label for="ibet">Apostas</label>
-            <input type="radio" name="categoria" id="iali" value="alimentacao"> <label for="iali">Alimentação</label>
-            <input type="radio" name="categoria" id="itra" value="transporte"> <label for="itra">Transporte</label>
+        <fieldset id="categoriasReceita" class="categorias">
+            <input type="radio" name="categoriaReceita" id="isal" value="salario"> <label for="isal">Salário</label>
+            <input type="radio" name="categoriaReceita" id="iext" value="receita_extra"> <label for="iext">Receita extra</label>
+            <input type="radio" name="categoriaReceita" id="iinv" value="investimentos"> <label for="iinv">Investimentos</label>
+        </fieldset>
+        <fieldset id="categoriasGasto" class="categorias" hidden>
+            <input type="radio" name="categoriaGasto" id="iali" value="alimentacao"> <label for="iali">Alimentação</label>
+            <input type="radio" name="categoriaGasto" id="itra" value="transporte"> <label for="itra">Transporte</label>
+            <input type="radio" name="categoriaGasto" id="imor" value="moradia"> <label for="imor">Moradia</label>
+            <input type="radio" name="categoriaGasto" id="ilaz" value="lazer"> <label for="ilaz">Lazer</label>
+            <input type="radio" name="categoriaGasto" id="iest" value="estudos"> <label for="iest">Estudos</label>
+            <input type="radio" name="categoriaGasto" id="isau" value="saude"> <label for="isau">Saúde</label>
+            <input type="radio" name="categoriaGasto" id="iass" value="assinaturas"> <label for="iass">Assinaturas</label>
         </fieldset>
         <button type="submit">Adcionar ao balanço</button>
     </form>

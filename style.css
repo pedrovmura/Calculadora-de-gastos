@@ -8,12 +8,12 @@
     --texto-primario: #f2f2f2;
     --texto-secundario: #9a9aa5;
 
-    --cor-receita: #4ade80;
-    --cor-gasto: #f87171;
-    --cor-destaque: #6366f1;
+    --cor-receita: #6fae82;
+    --cor-gasto: #d97878;
+    --cor-destaque: #5b5fc7;
 
     --borda-cor: #2e2e3a;
-    --radius: 12px;
+    --radius: 6px;
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -103,8 +103,7 @@ header p {
 }
 
 #cardSaldo {
-    border: 2px solid var(--cor-destaque);
-    transform: scale(1.03);
+    border: 1px solid var(--cor-destaque);
 }
 
 form {
@@ -164,20 +163,20 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     margin: 0;
 }
 
-#categorias {
+.categorias {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
 
-#categorias input[type="radio"] {
+.categorias input[type="radio"] {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-#categorias label {
+.categorias label {
     padding: 8px 14px;
     border-radius: var(--radius);
     background-color: var(--cor3);
@@ -187,18 +186,19 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     transition: all 0.15s ease;
 }
 
-#categorias input[type="radio"]:checked + label {
-    background-color: var(--cor-destaque);
+.categorias input[type="radio"]:checked + label {
+    background-color: rgba(91, 95, 199, 0.15);
     border-color: var(--cor-destaque);
     color: var(--texto-primario);
 }
 
-#categorias label:hover {
+.categorias label:hover {
     border-color: var(--cor-destaque);
 }
 
 button {
-    background-color: gold;
+    background-color: var(--texto-primario);
+    color: var(--cor1);
     border: none;
     border-radius: var(--radius);
     padding: 10px 20px;
@@ -210,7 +210,7 @@ button {
 }
 
 button:hover {
-    filter: brightness(0.9);
+    filter: brightness(0.85);
 }
 
 #listT, #graphic {
