@@ -86,14 +86,6 @@ header p {
     color: var(--texto-secundario);
 }
 
-.variacao-positiva {
-    color: var(--cor-receita);
-}
-
-.variacao-negativa {
-    color: var(--cor-gasto);
-}
-
 #cardReceita > span:first-of-type {
     color: var(--cor-receita);
 }
@@ -104,6 +96,14 @@ header p {
 
 #cardSaldo {
     border: 1px solid var(--cor-destaque);
+}
+
+.variacao-positiva {
+    color: var(--cor-receita);
+}
+
+.variacao-negativa {
+    color: var(--cor-gasto);
 }
 
 form {
@@ -124,24 +124,8 @@ form fieldset:first-of-type {
     gap: 10px;
 }
 
-form fieldset:first-of-type input, form fieldset:first-of-type select {
-    width: auto;
-}
-
-#ivalor {
-    flex: 0.6;
-}
-
-#itipo {
-    flex: none;
-    width: 110px;
-}
-
-#idescricao {
-    flex: 1.5;
-}
-
-form input, form select {
+form input,
+form select {
     background-color: var(--cor3);
     color: var(--texto-primario);
     border: 1px solid var(--borda-cor);
@@ -153,14 +137,26 @@ form input, form select {
     font-size: 1rem;
 }
 
-form input:focus, form select:focus {
+form fieldset:first-of-type input,
+form fieldset:first-of-type select {
+    width: auto;
+    flex: 1;
+}
+
+form input:focus,
+form select:focus {
     outline: none;
     border-color: var(--cor-destaque);
 }
 
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 .categorias {
@@ -224,7 +220,8 @@ button:hover {
     filter: brightness(0.85);
 }
 
-#listT, #graphic {
+#listT,
+#graphic {
     margin: 20px 15px;
 }
 
@@ -236,7 +233,7 @@ footer {
 }
 
 footer p {
-    color: var(--texto-primario);
+    color: var(--texto-secundario);
     margin-bottom: 6px;
 }
 
