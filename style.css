@@ -167,6 +167,17 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    transition: opacity 0.2s ease, max-height 0.2s ease;
+    overflow: hidden;
+    max-height: 200px;
+    opacity: 1;
+}
+
+.categorias.oculto {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .categorias input[type="radio"] {
