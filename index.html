@@ -35,11 +35,13 @@
 
     <form>
         <fieldset>
-            <input type="number" id="ivalor" placeholder="Valor" required>
-            <select name="tipo" id="itipo">
-                <option value="receita">Receita</option>
-                <option value="gasto">Gasto</option>
-            </select>
+            <div class="linha-valor-tipo">
+                <input type="number" id="ivalor" placeholder="Valor" required>
+                <select name="tipo" id="itipo">
+                    <option value="receita">Receita</option>
+                    <option value="gasto">Gasto</option>
+                </select>
+            </div>
             <input type="text" id="idescricao" placeholder="Descrição">
         </fieldset>
 
