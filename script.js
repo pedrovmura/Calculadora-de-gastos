@@ -137,6 +137,71 @@ function mostrarCards() {
     aplicarVariacao('gastoVariacao', mesAtual.gastoMes, mesAnterior.gastoMes);
 }
 
+let grafico = null;
+
+function calcularPorCategoria() {
+    const totalPorCategoria = {};
+
+    transacoes.forEach(function(transacao) {
+        if (transacao.tipo === 'gasto') {
+            if (!totalPorCategoria[transacao.categoria]) {
+                totalPorCategoria[transacao.categoria] = 0;
+            }
+            totalPorCategoria[transacao.categoria] += transacao.valor;
+        }
+    });
+
+    return totalPorCategoria;
+}
+
+function mostrarGrafico() {
+    const dados = calcularPorCategoria();
+    const categorias = Object.keys(dados);
+    const valores = Object.values(dados);
+
+    const canvas = document.getElementById('graficoCategorias');
+
+    if (grafico) {
+        grafico.destroy();
+    }
+
+    if (categorias.length === 0) {
+        return;
+    }
+
+    grafico = new Chart(canvas, {
+        type: 'doughnut',
+        data: {
+            labels: categorias,
+            datasets: [{
+                data: valores,
+                backgroundColor: [
+                    '#d97878',
+                    '#e0a868',
+                    '#d9c968',
+                    '#8fbf7f',
+                    '#68b0d9',
+                    '#8f8fd9',
+                    '#c987c9'
+                ],
+                borderColor: '#1f1f2b',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: {
+                        color: '#f2f2f2'
+                    }
+                }
+            }
+        }
+    });
+}
+
 function aplicarVariacao(idElemento, valorAtual, valorAnterior) {
     const elemento = document.getElementById(idElemento);
     const variacao = calculoVariacao(valorAtual, valorAnterior);
@@ -160,6 +225,7 @@ function aplicarVariacao(idElemento, valorAtual, valorAnterior) {
 function mostrarGeral() {
     mostrarLista();
     mostrarCards();
+    mostrarGrafico();
 }
 
 function tipoValor() {
