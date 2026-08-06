@@ -108,7 +108,7 @@
 <h3>Technical decisions</h3>
 
 <ul>
-    <li><strong>Vanilla JS by choice</strong> — the project was built without frameworks on purpose, as a language I'm comfortable using in projects and to practice fundamentals.</li>
+    <li><strong>JS by choice</strong> — the project was built without frameworks on purpose, as a language I'm comfortable using in projects and to practice fundamentals.</li>
     <li><strong>localStorage as persistence</strong> — since this is a client-side project with no backend, <code>localStorage</code> was chosen to keep data between sessions, with the app's state held in memory during use and synced on every change.</li>
     <li><strong>Categories split by type</strong> — income and expenses have distinct sets of categories, shown dynamically based on the selected type, avoiding nonsensical combinations (e.g. "Salary" as an expense category).</li>
 </ul>
