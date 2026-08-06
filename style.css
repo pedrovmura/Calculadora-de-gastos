@@ -56,6 +56,7 @@ header p {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     text-align: center;
+    min-width: 0;
 }
 
 .card h2 {
@@ -119,13 +120,18 @@ form fieldset {
     margin-bottom: 12px;
 }
 
-form fieldset:first-of-type {
+.linha-valor-tipo {
     display: flex;
     gap: 10px;
 }
 
-form input,
-form select {
+.linha-valor-tipo input, .linha-valor-tipo select {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+}
+
+form input, form select {
     background-color: var(--cor3);
     color: var(--texto-primario);
     border: 1px solid var(--borda-cor);
@@ -137,20 +143,12 @@ form select {
     font-size: 1rem;
 }
 
-form fieldset:first-of-type input,
-form fieldset:first-of-type select {
-    width: auto;
-    flex: 1;
-}
-
-form input:focus,
-form select:focus {
+form input:focus, form select:focus {
     outline: none;
     border-color: var(--cor-destaque);
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -228,6 +226,7 @@ button:hover {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 12px;
+    min-width: 0;
 }
 
 .coluna-lancamentos h3 {
@@ -261,10 +260,13 @@ button:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    min-width: 0;
 }
 
 .lancamento-categoria {
     color: var(--texto-secundario);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .lancamento.tipo-receita .lancamento-valor {
@@ -285,6 +287,7 @@ button:hover {
     padding: 0 0 0 8px;
     line-height: 1;
     transition: color 0.15s ease;
+    flex-shrink: 0;
 }
 
 .btn-remover-x:hover {
@@ -297,12 +300,6 @@ button:hover {
     font-size: 0.8rem;
     text-align: center;
     padding: 12px 0;
-}
-
-@media (max-width: 600px) {
-    #listT {
-        flex-direction: column;
-    }
 }
 
 #graphic {
@@ -345,4 +342,59 @@ footer a {
 
 footer a:hover {
     color: var(--cor-destaque);
+}
+
+@media (max-width: 768px) {
+    #resumo,
+    form,
+    #listT,
+    #graphic {
+        margin: 16px 12px;
+    }
+
+    .card > span:first-of-type {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    #resumo {
+        flex-direction: column;
+    }
+
+    #cardSaldo {
+        order: -1;
+    }
+
+    .linha-valor-tipo {
+        flex-direction: column;
+    }
+
+    #listT {
+        flex-direction: column;
+    }
+
+    .lancamento {
+        font-size: 0.8rem;
+    }
+
+    footer a {
+        display: inline-block;
+        margin: 4px 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .categorias label {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    button {
+        padding: 12px;
+    }
 }
