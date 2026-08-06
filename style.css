@@ -239,34 +239,42 @@ button:hover {
 }
 
 .lancamento {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 8px 10px;
     border-radius: var(--radius);
     background-color: var(--cor3);
     margin-bottom: 6px;
     font-size: 0.85rem;
-    cursor: default;
 }
 
 .lancamento:last-child {
     margin-bottom: 0;
 }
 
-.lancamento-info {
+.lancamento-principal {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lancamento-valores {
+    display: flex;
+    align-items: center;
     gap: 8px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    min-width: 0;
+    flex-shrink: 0;
 }
 
 .lancamento-categoria {
-    color: var(--texto-secundario);
+    color: var(--texto-primario);
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lancamento-descricao {
+    display: block;
+    color: var(--texto-secundario);
+    font-size: 0.75rem;
+    margin-top: 3px;
 }
 
 .lancamento.tipo-receita .lancamento-valor {

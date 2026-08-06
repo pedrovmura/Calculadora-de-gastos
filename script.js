@@ -76,17 +76,16 @@ function calculoVariacao(atual, anterior) {
 function criarLinhaLancamento(transacao) {
     const linha = document.createElement('div');
     linha.classList.add('lancamento', `tipo-${transacao.tipo}`);
-    linha.title = transacao.descricao || 'Sem descrição';
 
     linha.innerHTML = `
-        <div class="lancamento-info">
+        <div class="lancamento-principal">
             <span class="lancamento-categoria">${transacao.categoria}</span>
+            <div class="lancamento-valores">
+                <span class="lancamento-valor">R$ ${transacao.valor.toFixed(2)}</span>
+                <button class="btn-remover-x" data-id="${transacao.id}" title="Remover">×</button>
+            </div>
         </div>
-        <div class="lancamento-info">
-            <span class="lancamento-valor">R$ ${transacao.valor.toFixed(2)}</span>
-            <button class="btn-remover-x" data-id="${transacao.id}" title="Remover">×</button>
-        </div>
-    `;
+        ${transacao.descricao ? `<span class="lancamento-descricao">${transacao.descricao}</span>` : ''} `;
 
     return linha;
 }
