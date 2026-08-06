@@ -48,6 +48,7 @@
             <input type="radio" name="categoriaReceita" id="iext" value="receita_extra"> <label for="iext">Receita extra</label>
             <input type="radio" name="categoriaReceita" id="iinv" value="investimentos"> <label for="iinv">Investimentos</label>
         </fieldset>
+
         <fieldset id="categoriasGasto" class="categorias oculto">
             <input type="radio" name="categoriaGasto" id="iali" value="alimentacao"> <label for="iali">Alimentação</label>
             <input type="radio" name="categoriaGasto" id="itra" value="transporte"> <label for="itra">Transporte</label>
@@ -61,7 +62,17 @@
         <button type="submit">Adcionar ao balanço</button>
     </form>
 
-    <div id="listT"></div>
+    <section id="listT">
+        <div class="coluna-lancamentos">
+            <h3>Receitas</h3>
+            <div id="listaReceitas"></div>
+        </div>
+        <div class="coluna-lancamentos">
+            <h3>Gastos</h3>
+            <div id="listaGastos"></div>
+        </div>
+    </section>
+
     <div id="graphic"></div>
 
     <footer>
